@@ -1,0 +1,15 @@
+@charset "utf-8";
+// If need, change your variables before importing Bulma
+
+$dark-bg-color: #1c1e23;
+$body-background-color: $dark-bg-color;
+$body-color: white;
+$family-primary: Lato;
+
+$navbar-background-color: $dark-bg-color;
+$navbar-padding-horizontal: 110px;
+$footer-background-color: $dark-bg-color;
+
+$box-background-color: #454b5a;
+
+@import "~bulma/bulma.sass";

@@ -1,20 +1,24 @@
 import React from "react"
-import { Link } from "gatsby"
 
 import Layout from "../components/layout"
-import Image from "../components/image"
+import Image from "./index-images.js"
 import SEO from "../components/seo"
+
+import "./styles.scss"
 
 const IndexPage = () => (
   <Layout>
     <SEO title="Home" />
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-      <Image />
+    <div class="container has-text-centered">
+      <div class="section">
+      <h2>I'm a</h2>
+      <h1 class="is-size-1">FULL STACK ENGINEER</h1>
+      <h2>and I like solving problems with:</h2>
+      </div>
+      <div style={{ marginBottom: `1.45rem` }}>
+        <Image />
+      </div>
     </div>
-    <Link to="/page-2/">Go to page 2</Link>
   </Layout>
 )
 

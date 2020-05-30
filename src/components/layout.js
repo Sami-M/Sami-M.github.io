@@ -7,39 +7,51 @@
 
 import React from "react"
 import PropTypes from "prop-types"
-import { useStaticQuery, graphql } from "gatsby"
 
-import Header from "./header"
-import "./layout.css"
+import "./layout.scss"
 
 const Layout = ({ children }) => {
-  const data = useStaticQuery(graphql`
-    query SiteTitleQuery {
-      site {
-        siteMetadata {
-          title
-        }
-      }
-    }
-  `)
 
   return (
     <>
-      <Header siteTitle={data.site.siteMetadata.title} />
-      <div
-        style={{
-          margin: `0 auto`,
-          maxWidth: 960,
-          padding: `0 1.0875rem 1.45rem`,
-        }}
-      >
-        <main>{children}</main>
-        <footer>
-          © {new Date().getFullYear()}, Built with
-          {` `}
-          <a href="https://www.gatsbyjs.org">Gatsby</a>
-        </footer>
-      </div>
+      <nav class="navbar" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+          <a className="navbar-item has-text-white" href="/">
+            sami • dev
+          </a>
+
+          {/* <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+            <span aria-hidden="true"></span>
+          </a> */}
+        </div>
+
+        {/* <div id="navbarBasicExample" class="navbar-menu">
+
+          <div class="navbar-end">
+            <div class="navbar-item">
+            <a class="navbar-item">
+              🤔
+            </a>
+            <a class="navbar-item">
+              🧠
+            </a>
+            <a class="navbar-item">
+              📝
+            </a>
+            </div>
+          </div>
+        </div> */}
+      </nav>
+      <div class="section">{children}</div>
+      <footer class="footer">
+        <div class="content has-text-centered">
+          <p>
+            © {new Date().getFullYear()}
+          </p>
+        </div>        
+      </footer>
     </>
   )
 }
